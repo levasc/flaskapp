@@ -3,6 +3,8 @@ FROM python:alpine
 
 LABEL maintainer="Jeeva S. Chelladhurai"
 
+RUN apk add --no-cache bash
+
 RUN pip install flask
 
 COPY src /src/

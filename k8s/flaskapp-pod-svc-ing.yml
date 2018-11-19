@@ -14,6 +14,30 @@ spec:
         image: levasc/flaskapp
         ports:
         - containerPort: 5000
+        volumeMounts:
+        - name: src
+          mountPath: /src
+          subPath: modules
+
+      volumes:
+      - name: myapp
+        persistentVolumeClaim:
+        claimName: myapp-pv-claim
+        
+        
+---        
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myapp-pv-claim
+  labels:
+    app: myapp
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
 ---
 apiVersion: v1
 kind: Service

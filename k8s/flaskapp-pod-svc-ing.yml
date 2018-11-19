@@ -17,8 +17,7 @@ spec:
         volumeMounts:
         - name: src
           mountPath: /src
-          subPath: modules
-
+          
       volumes:
       - name: myapp
         persistentVolumeClaim:

@@ -27,6 +27,16 @@ def show_details() :
            "</body>" + \
            "</html>"
 
+@app.route("/hello")                                                            
+def hello_world() :                                                             
+    return "<html>" + \                                                         
+           "<head><title>Hello World!</title></head>" + \
+           "<body>" + \                                      
+           "<h1>Hello World</h1>" + \                      
+           "</body>" + \                                          
+           "</html>"                                     
+                        
+
 @app.route("/json")
 def send_json() :
     global startTime
